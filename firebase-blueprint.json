@@ -1,0 +1,136 @@
+{
+  "entities": {
+    "Book": {
+      "title": "Book",
+      "description": "A book in the user's library",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "coverUrl": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "Want to Read",
+            "Reading",
+            "Completed"
+          ]
+        },
+        "progress": {
+          "type": "number"
+        },
+        "rating": {
+          "type": "number"
+        },
+        "genre": {
+          "type": "string"
+        },
+        "synopsis": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "addedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "completedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "pages": {
+          "type": "number"
+        },
+        "readPages": {
+          "type": "number"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "collectionId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "author",
+        "status",
+        "userId",
+        "addedAt"
+      ]
+    },
+    "UserProfile": {
+      "title": "User Profile",
+      "description": "Public profile information for a user",
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": "string"
+        },
+        "photoURL": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "ArchiveCollection": {
+      "title": "Archive Collection",
+      "description": "A folder or category in the user's library",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "parentId": {
+          "type": "string",
+          "description": "Null for root collections"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "name",
+        "userId",
+        "createdAt"
+      ]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profile document"
+    },
+    "users/{userId}/collections/{collectionId}": {
+      "schema": "ArchiveCollection",
+      "description": "Folders and categories"
+    },
+    "users/{userId}/books/{bookId}": {
+      "schema": "Book",
+      "description": "Collection of books belonging to a user"
+    }
+  }
+}

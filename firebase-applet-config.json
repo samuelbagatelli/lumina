@@ -1,0 +1,9 @@
+{
+  "projectId": "lumina-infrasbs",
+  "apiKey": "AIzaSyAI2qhwZpcFf-P_KqT_cd0b4rSPUjmFKfg",
+  "appId": "1:863365995856:web:67d83f61d603a536582055",
+  "authDomain": "lumina-infrasbs.firebaseapp.com",
+  "firestoreDatabaseId": "(default)",
+  "storageBucket": "lumina-infrasbs.firebasestorage.app",
+  "messagingSenderId": "863365995856"
+}

@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-lumina-bg: var(--bg);
+  --color-lumina-ink: var(--ink);
+  --color-lumina-slate-50: var(--slate-50);
+  --color-lumina-slate-100: var(--slate-100);
+  --color-lumina-slate-200: var(--slate-200);
+  --color-lumina-slate-400: var(--slate-400);
+  --color-lumina-slate-500: var(--slate-500);
+  --color-lumina-slate-900: var(--slate-900);
+  --color-lumina-primary: var(--primary);
+  --color-lumina-primary-foreground: var(--primary-foreground);
+  --color-lumina-indigo: #4F46E5;
+}
+
+@layer base {
+  :root {
+    --bg: #FDFDFD;
+    --ink: #1A1A1A;
+    --slate-50: #F8FAFC;
+    --slate-100: #F1F5F9;
+    --slate-200: #E2E8F0;
+    --slate-400: #94A3B8;
+    --slate-500: #64748B;
+    --slate-900: #0F172A;
+    --primary: #0F172A;
+    --primary-foreground: #FFFFFF;
+  }
+
+  .dark {
+    --bg: #0F172A;
+    --ink: #F8FAFC;
+    --slate-50: #1E293B;
+    --slate-100: #334155;
+    --slate-200: #475569;
+    --slate-400: #94A3B8;
+    --slate-500: #CBD5E1;
+    --slate-900: #F8FAFC;
+    --primary: #F8FAFC;
+    --primary-foreground: #0F172A;
+  }
+
+  body {
+    @apply bg-lumina-bg text-lumina-slate-900 font-sans antialiased transition-colors duration-300;
+  }
+
+  button, a {
+    @apply cursor-pointer;
+  }
+}
+
+.markdown-body {
+  @apply font-sans;
+}
